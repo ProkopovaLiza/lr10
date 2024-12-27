@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Деление двух чисел</title>
+    <script>
+        // Функция для деления двух чисел
+        function divideNumbers() {
+            while (true) {
+                // Запрос первого числа
+                let firstInput = prompt("Введите первое число (или 'выход' для завершения):");
+                
+                // Проверка на "выход"
+                if (firstInput === null || firstInput.toLowerCase() === 'выход') {
+                    alert("Выход из программы.");
+                    break;
+                }
+
+                // Преобразование ввода в число
+                let firstNumber = parseFloat(firstInput);
+
+                // Проверка на корректность первого числа
+                if (isNaN(firstNumber)) {
+                    alert("Ошибка: Пожалуйста, введите корректное число.");
+                    continue;
+                }
+
+                // Запрос второго числа
+                let secondInput = prompt("Введите второе число (или 'выход' для завершения):");
+
+                // Проверка на "выход"
+                if (secondInput === null || secondInput.toLowerCase() === 'выход') {
+                    alert("Выход из программы.");
+                    break;
+                }
+
+                // Преобразование ввода во второе число
+                let secondNumber = parseFloat(secondInput);
+
+                // Проверка на корректность второго числа
+                if (isNaN(secondNumber)) {
+                    alert("Ошибка: Пожалуйста, введите корректное число.");
+                    continue;
+                }
+
+                // Проверка на деление на ноль
+                if (secondNumber === 0) {
+                    alert("Ошибка: Деление на ноль невозможно.");
+                    continue;
+                }
+
+                // Вычисление результата
+                let result = firstNumber / secondNumber;
+
+                // Вывод результата
+                alert("Результат: " + firstNumber + " / " + secondNumber + " = " + result);
+            }
+        }
+
+        // Вызов функции при загрузке страницы
+        window.onload = function() {
+            divideNumbers();
+        };
+    </script>
+</head>
+<body>
+    <h1>Программа деления двух чисел</h1>
+    <p>Открывается в диалоговых окнах. Следуйте инструкциям.</p>
+</body>
+</html>
